@@ -1,2 +1,2 @@
-# Prueba Online
-Repositorio de beta de juego en linea
+# ProyectoFinalUnity
+Repositorio del gather en unity para el proyecto final
