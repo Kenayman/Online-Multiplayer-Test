@@ -1,6 +1,8 @@
 
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.EventSystems;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : NetworkBehaviour
@@ -12,16 +14,16 @@ public class PlayerMovement : NetworkBehaviour
     public GameObject cameraHolder;
     private int state;
 
-
     private void Start()
     {
         animator = GetComponent<Animator>();
-
     }
 
     void Update()
     {
         if (!IsOwner) return;
+
+        if (EventSystem.current.currentSelectedGameObject != null) return;
 
         Vector2 movement = Vector2.zero;
 
@@ -55,7 +57,6 @@ public class PlayerMovement : NetworkBehaviour
         cameraHolder.SetActive(IsOwner);
         base.OnNetworkSpawn();
     }
-
 }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class ChatManager : NetworkBehaviour
 {
@@ -22,6 +23,7 @@ public class ChatManager : NetworkBehaviour
         {
             SendChatMessage(chatInputField.text, playerName);
             chatInputField.text = "";
+            EventSystem.current.SetSelectedGameObject(null);
         }
     }
 
