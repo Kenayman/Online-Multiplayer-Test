@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9141a7eafe8484b4a834cfad92ccd2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatMessagePrefab: {fileID: 3105236472809020981, guid: f8e08cc55268af44dadd993cadb509ac, type: 3}
+  chatMessagePrefab: {fileID: 3400634024567160839, guid: f8e08cc55268af44dadd993cadb509ac, type: 3}
   chatContent: {fileID: 932803383}
   chatInputField: {fileID: 741839329}
   playerName: Player
@@ -363,8 +363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504.03, y: -150}
-  m_SizeDelta: {x: 332.05, y: 200}
+  m_AnchoredPosition: {x: 480, y: -272}
+  m_SizeDelta: {x: 332.05, y: 202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495034577
 MonoBehaviour:
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Content: {fileID: 932803382}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 437787455}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 741839331}
   - component: {fileID: 741839330}
   - component: {fileID: 741839329}
+  - component: {fileID: 741839332}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -598,7 +599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504.03, y: -246}
+  m_AnchoredPosition: {x: 479, y: -388}
   m_SizeDelta: {x: 332.04, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741839329
@@ -680,7 +681,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 741839332}
+        m_TargetAssemblyTypeName: FixText, Assembly-CSharp
+        m_MethodName: removeReturn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -737,6 +750,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741839327}
   m_CullTransparentMesh: 1
+--- !u!114 &741839332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741839327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9998052c7b665adf0a5e3c8a159fe591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputText: {fileID: 741839329}
 --- !u!1 &926480765
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,10 +809,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 932803382}
-  - component: {fileID: 932803386}
   - component: {fileID: 932803385}
   - component: {fileID: 932803384}
   - component: {fileID: 932803383}
+  - component: {fileID: 932803386}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -809,11 +835,11 @@ RectTransform:
   m_Father: {fileID: 1837260564}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.000015258789}
+  m_SizeDelta: {x: -0.0001, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!225 &932803383
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -838,7 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 1
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &932803385
 MonoBehaviour:
@@ -854,7 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: 314
-  m_MinHeight: 180
+  m_MinHeight: 202
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: 1
@@ -869,7 +895,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 932803381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -877,13 +903,15 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_ChildAlignment: 6
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
 --- !u!1 &1143688053
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,12 +991,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1366, y: 768}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.504
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1320,7 +1348,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1837260565
 MonoBehaviour:
